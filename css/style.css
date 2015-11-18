@@ -40,7 +40,7 @@ body.siteintro main img
     position: fixed;
     left:0;
     right:0;
-    margin:0 auto;   
+    margin:0 auto;
 }
 /**  End Siteintro code **/
 
@@ -53,7 +53,7 @@ main
 section.primary {
 	background-color: #777;
 	border-radius: 8px;
-	background-image: url(images/backgrounds/devilsbreath.png);
+	background-image: url(../images/backgrounds/devilsbreath.png);
 	background-size: 100%;
 	background-repeat: no-repeat;
 	padding: 7px;
@@ -66,7 +66,7 @@ header.logo {
 	display: block;
 	width: 500px;
 	height: 300px;
-	background: url(images/backgrounds/nekrologo-green.png) 0 0 no-repeat;
+	background: url(../images/backgrounds/nekrologo-green.png) 0 0 no-repeat;
 	background-size: 500px;
 	position: relative;
 
@@ -96,7 +96,7 @@ ul.mainul {
     margin: 0px;
 }
 
-ul.mainul>li { 
+ul.mainul>li {
   display: inline;
 }
 
@@ -125,7 +125,7 @@ a.greenlink, a.blacklink, a.whitelink {
 	border-radius: 8px;
 	margin-right: 15px;
 	text-decoration: none;
-	transition:.75s;	
+	transition:.75s;
 }
 a.greenlink
 {
@@ -277,7 +277,7 @@ a.itemdetail:hover
 	top:5px; right:10px;
 }
 
-/* This places a dollar sign in front of price.  
+/* This places a dollar sign in front of price.
    Main reason for this is so that it's content is still a number,
    and can be sorted properly by the sort function.
  */

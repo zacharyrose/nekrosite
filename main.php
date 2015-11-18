@@ -5,8 +5,8 @@
         <title>Nekrofilth - Main</title>
         <meta name="description" content="Nekrofilth" />
         <meta name="author" content="Zack Rose" />
-        <link rel="stylesheet" href="dropit.css" />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="css/dropit.css" />
+        <link rel="stylesheet" href="css/style.css" />
         <script src="js/jquery-2.1.4.js"></script>
         <script src="js/dropit.js"></script>
 

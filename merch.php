@@ -6,11 +6,11 @@
     <title>Nekrofilth - Merch</title>
     <meta name="description" content="Nekrofilth" />
     <meta name="author" content="Nekrofilth" />
-    <meta property="og:image" content="http://nekrofilth.com/images/backgrounds/devilsbreath.png">    
+    <meta property="og:image" content="http://nekrofilth.com/images/backgrounds/devilsbreath.png">
 
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="modal.css" />
-    <link rel="stylesheet" href="dropit.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/dropit.css" />
 
     <script src="js/jquery-2.1.4.js"></script>
     <script src="js/handlebars-v3.0.3.js"></script>
@@ -21,27 +21,27 @@
 
     <script id="merch-template" type="text/x-handlebars-template">
     <div class="merchitem {{#if is_soldout}}is_soldout{{/if}} type-{{info_type}}" data-id="{{id}}"=>
-            
+
             <div class="merchthumb">
                 {{#if thumbnail}}
                 <img src="images/merch/{{thumbnail}}" />
                 {{else}}
                 <img src="images/merch/default_thumb.png" />
                 {{/if}}
-                
+
                 {{#if itemdetail}}
                 <a class = "itemdetail" href="images/merch/{{itemdetail}}" data-width="{{imagewidth}}" data-height="{{imageheight}}">See Detail</a>
                 {{/if}}
 
             </div>
-            
+
             <div class = "info">
                     <div class="type bubble">{{info_type}}</div>
                     <div class="title">{{info_title}}</div>
                     <div class="price bubble">{{info_price}}</div>
 
                     <div class="description">{{info_description}}</div>
-                    
+
             </div>
             {{#if is_soldout}}<div class="soldout bubble">SOLD OUT</div>{{/if}}
     </div>
@@ -72,7 +72,7 @@
                 <a href="#" class="merchselect merchlink blacklink" data-filter="7-inch">7-inches</a>
                 <a href="#" class="merchselect merchlink blacklink" data-filter="LP">LPs</a>
                 <a href="#" class="merchselect merchlink blacklink" data-filter="T-Shirt">T-shirts</a>
-                <a href="#" class="merchselect merchlink blacklink" data-filter="Patch">Patches</a>            
+                <a href="#" class="merchselect merchlink blacklink" data-filter="Patch">Patches</a>
             </div>
 
             <h2>Toggle</h2>
@@ -86,7 +86,7 @@
             <h2>Sort By</h2>
             <div>
                 <a href="#" class="merchsort merchlink blacklink" data-sort="Name">Name</a>
-                <a href="#" class="merchsort merchlink blacklink" data-sort="Type">Type</a>            
+                <a href="#" class="merchsort merchlink blacklink" data-sort="Type">Type</a>
                 <a href="#" class="merchsort merchlink blacklink" data-sort="Price_Ascend">Price (Low-High)</a>
                 <a href="#" class="merchsort merchlink blacklink" data-sort="Price_Descend">Price (High-Low)</a>
             </div>
