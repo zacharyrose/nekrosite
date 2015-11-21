@@ -8,19 +8,26 @@
     <meta name="author" content="Nekrofilth" />
     <meta property="og:image" content="http://nekrofilth.com/images/backgrounds/devilsbreath.png">
 
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/modal.css" />
     <link rel="stylesheet" href="css/dropit.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
     <script src="js/jquery-2.1.4.js"></script>
     <script src="js/handlebars-v3.0.3.js"></script>
     <script src="js/modal.js"></script>
-    <script src="js/merch.js"></script>
     <script src="js/sortElements.js"></script>
     <script src="js/dropit.js"></script>
+    <script src="js/simpleCart.js"></script>
+    <script src="js/simpleCart-config.js"></script>
+    <script src="js/merch.js"></script>
+
+
 
     <script id="merch-template" type="text/x-handlebars-template">
-    <div class="merchitem {{#if is_soldout}}is_soldout{{/if}} type-{{info_type}}" data-id="{{id}}"=>
+    <div class="merchitem simpleCart_shelfItem {{#if is_soldout}}is_soldout{{/if}} type-{{info_type}}" data-id="{{id}}"=>
+
+      <input type="hidden" name="custom" value="My Custom data" class="item_customdataname">
 
             <div class="merchthumb">
                 {{#if thumbnail}}
@@ -38,12 +45,24 @@
             <div class = "info">
                     <div class="type bubble">{{info_type}}</div>
                     <div class="title">{{info_title}}</div>
-                    <div class="price bubble">{{info_price}}</div>
+                    <div class="price bubble item_price">{{info_price}}</div>
 
                     <div class="description">{{info_description}}</div>
+                    <div class="item_name" style="display:none;">{{info_title}} [{{info_type}}]</div>
 
             </div>
-            {{#if is_soldout}}<div class="soldout bubble">SOLD OUT</div>{{/if}}
+            {{#if is_soldout}}
+            <div class="soldout bubble">SOLD OUT</div>
+            {{else}}
+            <div class="soldout">
+              {{#if options}}
+                {{{splitoptions options}}}
+              {{/if}}
+
+              <input type="text" value="1" style="width:30px; text-align:center;" class="item_Quantity" />
+              <a class="greenlink item_add" href="javascript:;">Add to Cart</a>
+            </div>
+            {{/if}}
     </div>
     </script>
 
@@ -69,17 +88,17 @@
 
             <h2>Select Only</h2>
             <div><!--div necessary for JS functionality (links must not be siblings of other sections) -->
-                <a href="#" class="merchselect merchlink blacklink" data-filter="7-inch">7-inches</a>
+                <a href="#" class="merchselect merchlink blacklink" data-filter="Seven_Inch">7-inches</a>
                 <a href="#" class="merchselect merchlink blacklink" data-filter="LP">LPs</a>
-                <a href="#" class="merchselect merchlink blacklink" data-filter="T-Shirt">T-shirts</a>
+                <a href="#" class="merchselect merchlink blacklink" data-filter="Shirt">Shirts</a>
                 <a href="#" class="merchselect merchlink blacklink" data-filter="Patch">Patches</a>
             </div>
 
             <h2>Toggle</h2>
             <div>
-                <a href="#" class="merchfilter merchlink whitelink selected" data-filter="7-inch">7-inches</a>
+                <a href="#" class="merchfilter merchlink whitelink selected" data-filter="Seven_Inch">7-inches</a>
                 <a href="#" class="merchfilter merchlink whitelink selected" data-filter="LP">LPs</a>
-                <a href="#" class="merchfilter merchlink whitelink selected" data-filter="T-Shirt">T-shirts</a>
+                <a href="#" class="merchfilter merchlink whitelink selected" data-filter="Shirt">Shirts</a>
                 <a href="#" class="merchfilter merchlink whitelink selected" data-filter="Patch">Patches</a>
             </div>
 

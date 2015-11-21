@@ -58,6 +58,7 @@ section.primary {
 	background-repeat: no-repeat;
 	padding: 7px;
 	min-height: 600px;
+	margin-top: 5px;
 }
 
 
@@ -206,7 +207,7 @@ a.merchlink
 /* main div for a "merch item". This is basically a row in the database */
 .merchitem {
 	max-width: 85%;
-	min-height: 170px;
+	min-height: 210px;
 	/*background-color: rgba(255, 255, 255, 0.80);*/
 	background-color: rgba(200, 200, 200, 0.75);
 	border:1px solid black;

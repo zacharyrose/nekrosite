@@ -27,7 +27,7 @@ var parseMerchData = function(result)
         obj.is_soldout = obj.is_soldout == '1' ? true : false;
 
         //Compile Handlebars.js template
-        var source   = $("#merch-template").html(); 
+        var source   = $("#merch-template").html();
         var template = Handlebars.compile(source);
         var html    = template(obj);
 
@@ -40,7 +40,7 @@ var parseMerchData = function(result)
 var filterMerchToggle = function(filter)
 {
     var items = $('.merchitem.type-'+filter);
-    items.fadeToggle(300);    
+    items.fadeToggle(300);
     refreshSoldOutItems(false);  //Pass (false) so that we don't perform fade effect here
 }
 
@@ -48,10 +48,10 @@ var filterMerchSelect = function(filter)
 {
     var items = $('.merchitem.type-'+filter);
     var items_hide = $('.merchitem').not('.type-'+filter);
-    items_hide.hide();    
+    items_hide.hide();
     items.fadeIn(300);
 
-    refreshSoldOutItems(false);  //Pass (false) so that we don't perform fade effect here    
+    refreshSoldOutItems(false);  //Pass (false) so that we don't perform fade effect here
 }
 
 /* Grab GET arguments passed into the URL */
@@ -97,7 +97,7 @@ var refreshSoldOutItems = function(doFade)
     }
     else
     {
-        doFade ? items.fadeOut(300) : items.hide();   
+        doFade ? items.fadeOut(300) : items.hide();
     }
 
     markVisibleItems(); //Set ".show" flag to current visible items
@@ -119,7 +119,7 @@ var markVisibleItems = function()
     //Later we will hide soldout items not part of current visible set
     $.each(visibleTypes, function(i, filter_type){
         items.filter('.type-'+filter_type).addClass("show");
-    });  
+    });
 }
 
 
@@ -130,8 +130,8 @@ var unmarkVisibleItems = function()
 }
 
 /*********************************************
-This funciton is used to update toggle buttons 
-when a "select only" button is pressed 
+This funciton is used to update toggle buttons
+when a "select only" button is pressed
 **********************************************/
 var setToggleButtons = function(filter)
 {
@@ -148,7 +148,7 @@ This function highlights a button and unsets all sibling buttons.
 When the user clicks a given sort or select, only that button should be selected.
 *********************************************************************************/
 $.fn.selectButton = function()
-{   
+{
     // "new" class is a flag to later set button to appropriate color
     // This prevents linkcolor from changing until mouse leaves button
     this.addClass("selected").addClass("new");
@@ -258,7 +258,7 @@ var merchSort = function(e){
             sort_value=".info .price";
             price=true;
             descend = true;
-            break;    
+            break;
         default:
             break;
     }
@@ -357,7 +357,7 @@ var toggle_mouseleave = function (e)
 }
 
 var select_mouseleave = function (e)
-{  
+{
     $(this).removeClass("new").addClass("whitelink").removeClass("blacklink");
 }
 
@@ -379,7 +379,7 @@ $(document).ready(function(){
         {
             parseMerchData(result); //on success, parse data and display on page
             refreshSoldOutItems(false); //Sold Out Items are hidden by default, refresh them on page load.
-                       
+
             /****** Bind Click Events *****/
             $('a.itemdetail').click(openModal);
             $('a.merchsort').click(merchSort);
@@ -393,7 +393,7 @@ $(document).ready(function(){
             $('.merchoptions').on('mouseleave','.merchselect.new',select_mouseleave);
             $('.merchoptions').on('mouseleave','.merchfilter.new',toggle_mouseleave);
             $('.merchoptions').on('mouseleave','.merchsort.new',select_mouseleave);
-            
+
             /** Select Specific Type from dropdown link **/
             var $_GET = getGetArguments();
 
@@ -415,3 +415,41 @@ $(document).ready(function(){
         }
     });
 });
+
+
+
+Handlebars.registerHelper('splitoptions', function(options) {
+  //console.log(options);
+  var optionlist = options.split("|");
+  //console.log(optionlist);
+
+  if (optionlist.length > 0)
+  {
+    var optionselect='<select class="item_size">';
+    $.each(optionlist, function(i, val)
+    {
+      optionselect+='\n<option value="'+val+'">'+val+'</option>\n'
+    });
+    optionselect+='\n</select>';
+    return optionselect;
+  }
+  else {
+    return "";
+  }
+});
+
+/*
+Handlebars.registerHelper("splitString", function(context, options){
+    if(context){
+      var ret = "";
+
+      var tempArr = context.trim().split(options.hash["delimiter"]);
+
+      for(var i=0; i < tempArr.length; i++)
+      {
+        ret = ret + options.fn(tempArr[i]);
+      }
+
+      return ret;
+    }
+  });*/
