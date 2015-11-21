@@ -106,7 +106,6 @@ simpleCart.shipping(function(){
   var first = shippingLocation() + "_1";
   var additional = shippingLocation() + "_add";
 
-  var singleItem = (simpleCart.quantity() == 1);
 
   var total = 0;
 
@@ -117,8 +116,7 @@ simpleCart.shipping(function(){
 
   $.each(itemTypes, function(i, item)
   {
-
-    if (!singleItem)
+    if (simpleCart.quantity() > 1)
     {
       if (i==highestRate)
       {
@@ -130,7 +128,7 @@ simpleCart.shipping(function(){
       }
     }
     else {
-      total=shippingRates[i][shippingLocation()+"_1"];
+      total=shippingRates[i][shippingLocation()+"_1"] * simpleCart.quantity();
     }
 
   });
