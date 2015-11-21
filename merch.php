@@ -26,8 +26,8 @@
 
     <script id="merch-template" type="text/x-handlebars-template">
     <div class="merchitem simpleCart_shelfItem {{#if is_soldout}}is_soldout{{/if}} type-{{info_type}}" data-id="{{id}}"=>
-
-      <input type="hidden" name="custom" value="My Custom data" class="item_customdataname">
+            <div class="title">{{info_title}}</div>
+            <div class="item_name" style="display:none;">{{info_title}} [{{info_type}}]</div>
 
             <div class="merchthumb">
                 {{#if thumbnail}}
@@ -43,18 +43,18 @@
             </div>
 
             <div class = "info">
-                    <div class="type bubble">{{info_type}}</div>
-                    <div class="title">{{info_title}}</div>
-                    <div class="price bubble item_price">{{info_price}}</div>
-
-                    <div class="description">{{info_description}}</div>
-                    <div class="item_name" style="display:none;">{{info_title}} [{{info_type}}]</div>
-
+                    <!--div class="description">{{info_description}}</div-->
             </div>
+
             {{#if is_soldout}}
             <div class="soldout bubble">SOLD OUT</div>
             {{else}}
             <div class="soldout">
+
+              <div class="bubble" style="display:inline;">{{info_type}}</div>
+
+              <div class="bubble price item_price" style="display:inline;">{{info_price}}</div>
+
               {{#if options}}
                 {{{splitoptions options}}}
               {{/if}}
@@ -64,12 +64,12 @@
             </div>
             {{/if}}
     </div>
-    </script>
+  </script>
 
 </head>
 <body>
 
-<main class="merch">
+<main>
 <?php include("header.php"); ?>
 
         <!-- This section is filled in dynamically -->
@@ -77,9 +77,31 @@
             <header>
                     <h1>Nekrofilth Store</h1>
             </header>
+
+            <div class="merchoptionsnew">
+
+            <div><!--div necessary for JS functionality (links must not be siblings of other sections) -->
+                <a href="#" class="merchselect merchlink blacklink" data-filter="Seven_Inch">7-inches</a>
+                <a href="#" class="merchselect merchlink blacklink" data-filter="LP">LPs</a>
+                <a href="#" class="merchselect merchlink blacklink" data-filter="Shirt">Shirts</a>
+                <a href="#" class="merchselect merchlink blacklink" data-filter="Patch">Patches</a>
+            </div>
+            <a href="#" class="merchfilter merchlink blacklink" data-filter="soldout">Show Sold-Out Items</a><br /><br />
+
+            <!--h2 style="display:inline-block;">Sort By</h2>
+            <div style="display:inline-block;">
+                <a href="#" class="merchsort merchlink blacklink" data-sort="Name">Name</a>
+                <a href="#" class="merchsort merchlink blacklink" data-sort="Type">Type</a>
+                <a href="#" class="merchsort merchlink blacklink" data-sort="Price_Ascend">Price (Low-High)</a>
+                <a href="#" class="merchsort merchlink blacklink" data-sort="Price_Descend">Price (High-Low)</a>
+            </div-->
+            </div>
+
+            <div class="merchandise pre-scrollable"></div>
+
         </section>
 
-        <aside class="merchoptions">
+        <!--aside class="merchoptions">
             <header>
                 <h1>Options</h1>
             </header>
@@ -87,7 +109,7 @@
             <a href="#" class="merchfilter merchlink blacklink" data-filter="soldout">Show Sold-Out Items</a><br /><br />
 
             <h2>Select Only</h2>
-            <div><!--div necessary for JS functionality (links must not be siblings of other sections) -->
+            <div>
                 <a href="#" class="merchselect merchlink blacklink" data-filter="Seven_Inch">7-inches</a>
                 <a href="#" class="merchselect merchlink blacklink" data-filter="LP">LPs</a>
                 <a href="#" class="merchselect merchlink blacklink" data-filter="Shirt">Shirts</a>
@@ -110,7 +132,7 @@
                 <a href="#" class="merchsort merchlink blacklink" data-sort="Price_Descend">Price (High-Low)</a>
             </div>
 
-        </aside>
+        </aside-->
 
 <footer>
 <p>&copy; Nekrofilth 2015</p>

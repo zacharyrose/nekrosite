@@ -32,7 +32,7 @@ var parseMerchData = function(result)
         var html    = template(obj);
 
         //Append data to the dom
-        $(".primary").append(html);
+        $(".merchandise").append(html);
     });
 }
 
@@ -390,10 +390,14 @@ $(document).ready(function(){
             (These must be delegated because the "new"
             class is added dynamically later on)
             ******************************************/
+            /*
             $('.merchoptions').on('mouseleave','.merchselect.new',select_mouseleave);
             $('.merchoptions').on('mouseleave','.merchfilter.new',toggle_mouseleave);
             $('.merchoptions').on('mouseleave','.merchsort.new',select_mouseleave);
-
+*/
+            $('.merchoptionsnew').on('mouseleave','.merchselect.new',select_mouseleave);
+            $('.merchoptionsnew').on('mouseleave','.merchfilter.new',toggle_mouseleave);
+            $('.merchoptionsnew').on('mouseleave','.merchsort.new',select_mouseleave);
             /** Select Specific Type from dropdown link **/
             var $_GET = getGetArguments();
 

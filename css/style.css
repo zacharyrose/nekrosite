@@ -4,7 +4,7 @@ body
 	background: black;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 100%;
-	min-width: 960px;
+	min-width: 666px;
 	text-align: center;
 }
 
@@ -46,7 +46,7 @@ body.siteintro main img
 
 main
 {
-	width: 75%;
+	width: 85%;
 	margin: 0 auto;
 }
 
@@ -54,10 +54,11 @@ section.primary {
 	background-color: #777;
 	border-radius: 8px;
 	background-image: url(../images/backgrounds/devilsbreath.png);
-	background-size: 100%;
+	background-size: 70%;
 	background-repeat: no-repeat;
+	background-position: top center;
 	padding: 7px;
-	min-height: 600px;
+	/*min-height: 600px;*/
 	margin-top: 5px;
 }
 
@@ -206,7 +207,8 @@ a.merchlink
 
 /* main div for a "merch item". This is basically a row in the database */
 .merchitem {
-	max-width: 85%;
+	max-width: 30%;
+	display: inline-block;
 	min-height: 210px;
 	/*background-color: rgba(255, 255, 255, 0.80);*/
 	background-color: rgba(200, 200, 200, 0.75);
@@ -218,16 +220,28 @@ a.merchlink
 	position: relative;
 }
 
+.title
+{
+	overflow: hidden;
+white-space: nowrap;
+}
+
 .merchthumb
 {
+	height: 170px;
 	display: inline-block;
-	width: 170px;
-	float:left;
+	vertical-align: center;
+}
+
+.merchthumb a
+{
+	display: block;
 }
 
 .merchthumb img
 {
-	width: 150px;
+	max-height: 150px;
+	max-width: 150px;
 }
 
 .merchitem .info
@@ -258,6 +272,7 @@ a.itemdetail:hover
 	padding: 5px;
 }
 
+/*
 .info .type
 {
 	display: inline;
@@ -277,6 +292,8 @@ a.itemdetail:hover
 	position: absolute;
 	top:5px; right:10px;
 }
+*/
+
 
 /* This places a dollar sign in front of price.
    Main reason for this is so that it's content is still a number,
@@ -289,7 +306,7 @@ a.itemdetail:hover
 
 .soldout
 {
-	position: absolute;
+	/*position: absolute;*/
 	bottom:5px; right:10px;
 }
 
@@ -300,3 +317,17 @@ a.itemdetail:hover
 	margin-top: 15px;
 }
 /**End merch page **/
+
+
+
+/* Allow scrollbars to always show in OS X */
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
