@@ -12,15 +12,18 @@
                                         <li><a href="main.php">News</a></li>
                                     </ul>
                                 </li>
-                                 <li><a class="greenlink" href="merch.php">Store</a>
+                                 <li><a class="greenlink" href="javascript:;">Store</a>
                                     <ul class="dropit-submenu subnav">
                                         <li><a href="merch.php?type=Shirt">Shirts</a></li>
                                         <li><a href="merch.php?type=LP">LPs</a></li>
+                                        <li><a href="merch.php?type=CD">CDs</a></li>
+                                        <li><a href="merch.php?type=Cassette">Cassettes</a></li>
                                         <li><a href="merch.php?type=Seven_Inch">7-Inches</a></li>
                                         <li><a href="merch.php?type=Patch">Patches</a></li>
+
                                     </ul>
                                 </li>
-                                <li><a class="greenlink" href="cart.php">Cart (<span class="simpleCart_quantity"></span>)</a></li>
+                                <li><a class="greenlink" href="cart.php">Cart <span class="cartHeader">(<span class="simpleCart_quantity"></span>)</span></a></li>
                                 <li><a class="greenlink" href="#">Tour Dates</a>
                                         <ul class="dropit-submenu subnav">
                                             <li><a href="#">COMING SOON...</a></li>

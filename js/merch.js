@@ -88,6 +88,7 @@ to happen when a user actually clicks the button.
 *************************************************/
 var refreshSoldOutItems = function(doFade)
 {
+  /*
     var items = $('.merchitem.is_soldout');
 
     //Only perform fade effect if instructed to do so via doFade Boolean
@@ -103,6 +104,7 @@ var refreshSoldOutItems = function(doFade)
     markVisibleItems(); //Set ".show" flag to current visible items
     items.not('.show').hide(); //remove items that are not visible
     unmarkVisibleItems(); //remove ".show" flag
+    */
 }
 
 var markVisibleItems = function()
@@ -429,7 +431,7 @@ Handlebars.registerHelper('splitoptions', function(options) {
 
   if (optionlist.length > 0)
   {
-    var optionselect='<select class="item_size">';
+    var optionselect='<select class="c-select select-item item_size">';
     $.each(optionlist, function(i, val)
     {
       optionselect+='\n<option value="'+val+'">'+val+'</option>\n'

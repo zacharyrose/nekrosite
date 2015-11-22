@@ -25,7 +25,7 @@
 
 
     <script id="merch-template" type="text/x-handlebars-template">
-    <div class="merchitem simpleCart_shelfItem {{#if is_soldout}}is_soldout{{/if}} type-{{info_type}}" data-id="{{id}}"=>
+    <div class="merchitem col-lg-4 simpleCart_shelfItem {{#if is_soldout}}is_soldout{{/if}} type-{{info_type}}" data-id="{{id}}"=>
             <div class="title">{{info_title}}</div>
             <div class="item_name" style="display:none;">{{info_title}} [{{info_type}}]</div>
 
@@ -47,21 +47,27 @@
             </div>
 
             {{#if is_soldout}}
-            <div class="soldout bubble">SOLD OUT</div>
-            {{else}}
-            <div class="soldout">
-
-              <div class="bubble" style="display:inline;">{{info_type}}</div>
-
-              <div class="bubble price item_price" style="display:inline;">{{info_price}}</div>
-
-              {{#if options}}
-                {{{splitoptions options}}}
-              {{/if}}
-
-              <input type="text" value="1" style="width:30px; text-align:center;" class="item_Quantity" />
-              <a class="greenlink item_add" href="javascript:;">Add to Cart</a>
+            <div class="input-group" >
+            <div class="input-group-addon soldoutitem">SOLD OUT</div>
             </div>
+            {{else}}
+
+            <div class="input-group" >
+
+              <div class="input-group-addon type">{{info_type}}</div>
+              <div class="input-group-addon price item_price">{{info_price}}</div>
+
+                {{#if options}}
+                <span class="input-group-addon select-group">
+                  {{{splitoptions options}}}
+                </span>
+                {{/if}}
+
+              <div class="input-group-btn">
+              <button name="type" type="button" value="add" class="btn btn-success item_add pull-left">Add</button>
+              </div>
+
+          </div>
             {{/if}}
     </div>
   </script>
@@ -81,12 +87,14 @@
             <div class="merchoptionsnew">
 
             <div><!--div necessary for JS functionality (links must not be siblings of other sections) -->
-                <a href="#" class="merchselect merchlink blacklink" data-filter="Seven_Inch">7-inches</a>
+                <a href="#" class="merchselect merchlink blacklink" data-filter="Shirt">Shirts</a>              
                 <a href="#" class="merchselect merchlink blacklink" data-filter="LP">LPs</a>
-                <a href="#" class="merchselect merchlink blacklink" data-filter="Shirt">Shirts</a>
+                <a href="#" class="merchselect merchlink blacklink" data-filter="CD">CDs</a>
+                <a href="#" class="merchselect merchlink blacklink" data-filter="Cassette">Cassettes</a>
+                <a href="#" class="merchselect merchlink blacklink" data-filter="Seven_Inch">7-inches</a>
                 <a href="#" class="merchselect merchlink blacklink" data-filter="Patch">Patches</a>
             </div>
-            <a href="#" class="merchfilter merchlink blacklink" data-filter="soldout">Show Sold-Out Items</a><br /><br />
+            <!--a href="#" class="merchfilter merchlink blacklink" data-filter="soldout">Show Sold-Out Items</a><br /--><br />
 
             <!--h2 style="display:inline-block;">Sort By</h2>
             <div style="display:inline-block;">

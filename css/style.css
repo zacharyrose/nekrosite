@@ -44,6 +44,11 @@ body.siteintro main img
 }
 /**  End Siteintro code **/
 
+.cartHeader
+{
+	color: lightgrey;
+}
+
 main
 {
 	width: 85%;
@@ -152,6 +157,15 @@ footer
 }
 
 /*Merch Page */
+
+.merchandise
+{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,.5);
+}
+
+/*
 main.merch
 {
 	width:90%;
@@ -160,15 +174,15 @@ main.merch section.primary {
 	width: 75%;
 	float: left;
 }
-
+*/
 
 
 /* aside.merchoptions has JS functionality that allows it to move with the page */
+/*
 .merchoptions
 {
 	width: 20%;
 	background-color: rgba(100, 138, 86, 0.90);
-	/*border: 2px solid rgba(160, 210, 210, .75);*/
 	border-radius: 10px;
 	margin-left: 30px;
 	margin-right: 10px;
@@ -196,6 +210,8 @@ main.merch section.primary {
 	font-size:28px;
 	margin: 25px auto;
 }
+*/
+
 
 /* These are the click events for filtering and sorting */
 a.merchlink
@@ -207,17 +223,30 @@ a.merchlink
 
 /* main div for a "merch item". This is basically a row in the database */
 .merchitem {
-	max-width: 30%;
+	/*max-width: 30%;
 	display: inline-block;
-	min-height: 210px;
-	/*background-color: rgba(255, 255, 255, 0.80);*/
+	min-height: 210px;*/
 	background-color: rgba(200, 200, 200, 0.75);
 	border:1px solid black;
 	border-radius: 4px;
-	margin: 10px auto;
+	/*margin: 10px auto;*/
 	color: black;
 	padding: 10px;
-	position: relative;
+	/*position: relative;*/
+}
+
+.type
+{
+	background-color: black;
+	color:white;
+}
+
+.soldoutitem
+{
+	line-height:1.5;
+	background-color:black;
+	color:white;
+	border-radius: 4px !important;
 }
 
 .title
@@ -228,7 +257,7 @@ white-space: nowrap;
 
 .merchthumb
 {
-	height: 170px;
+	height: 180px;
 	display: inline-block;
 	vertical-align: center;
 }
@@ -254,7 +283,7 @@ white-space: nowrap;
 a.itemdetail
 {
 	text-decoration: none;
-	font-size: 12px;
+	font-size: 15px;
 	color:black;
 	font-weight: bold;
 }
@@ -299,6 +328,12 @@ a.itemdetail:hover
    Main reason for this is so that it's content is still a number,
    and can be sorted properly by the sort function.
  */
+
+.price
+{
+		font-weight: bold;
+}
+
 .price::before
 {
 	content:"$";
@@ -319,6 +354,24 @@ a.itemdetail:hover
 /**End merch page **/
 
 
+.select-group {
+    padding: 0;
+		background-color: white;
+}
+
+
+.select-item {
+    border: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100%;
+		/*background-color: #eceeef;*/
+}
+
+#modal
+{
+	z-index: 99;
+}
 
 /* Allow scrollbars to always show in OS X */
 ::-webkit-scrollbar {
