@@ -41,7 +41,10 @@ var shippingRates = {
   Seven_Inch: {USA_1: 3, USA_add: 1, World_1: 10, World_add: 3}
 }
 
-var shippingLocation = function(){ return getCookie("shippingLocation")};
+var shippingLocation = function(){
+  //return getCookie("shippingLocation");
+  return localStorage.getItem("shippingLocation");
+};
 
 var getHighestShippingRate = function()
 {
@@ -138,16 +141,22 @@ simpleCart.shipping(function(){
 
 
 $(document).ready(function(){
-  checkCookie("shippingLocation", "USA");
+
+  if (localStorage.getItem("shippingLocation") === null) {
+    localStorage.setItem("shippingLocation", "USA");
+  }
+
+  //checkCookie("shippingLocation", "USA");
 
   $(".debug_action").click(simpleCart.shipping);
 
-  $("#shippingLocation").val(shippingLocation);
+  $("#shippingLocation").val(shippingLocation());
 
   $("#shippingLocation").on("change", function(){
     var newLocation = $("#shippingLocation option:selected").text();
     //console.log("newLocation " + newLocation);
-    setCookie("shippingLocation", newLocation, 365);
+    //setCookie("shippingLocation", newLocation, 365);
+    localStorage.setItem("shippingLocation", newLocation);
 
     $("#simpleCart_shipping").text("$"+simpleCart.shipping().toFixed(2));
     $("#simpleCart_grandTotal").text("$"+simpleCart.grandTotal().toFixed(2));
@@ -167,6 +176,7 @@ $(document).ready(function(){
 
 
 //COOOKIE STUFF
+/*
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -191,3 +201,4 @@ function checkCookie(cookieName, defaultValue) {
           setCookie(cookieName, defaultValue, 365);
     }
 }
+*/
