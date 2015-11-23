@@ -16,7 +16,7 @@
         <script src="js/simpleCart-config.js"></script>
 </head>
 <body>
-
+<?php include_once("analyticstracking.php") ?>
 
 <main>
 

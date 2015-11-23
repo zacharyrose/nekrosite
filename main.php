@@ -9,13 +9,13 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/dropit.css" />
         <link rel="stylesheet" href="css/style.css" />
-        
+
         <script src="js/jquery-2.1.4.js"></script>
         <script src="js/dropit.js"></script>
         <script src="js/simpleCart.js"></script>
 </head>
 <body>
-
+<?php include_once("analyticstracking.php") ?>
 
 <main>
 

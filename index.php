@@ -24,7 +24,7 @@
 
 </head>
 <body class="siteintro">
-
+<?php include_once("analyticstracking.php") ?>
 <main>
 	<a class="siteintro" href="merch.php?type=Shirt">
 		<img src="images/backgrounds/devilsbreath-logo.jpg" />

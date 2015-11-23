@@ -79,6 +79,7 @@
 
 </head>
 <body>
+<?php include_once("analyticstracking.php") ?>
 
 <main>
 <?php include("header.php"); ?>
