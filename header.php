@@ -12,7 +12,7 @@
                                         <li><a href="main.php">News</a></li>
                                     </ul>
                                 </li>
-                                 <li><a class="greenlink" href="javascript:;">Store</a>
+                                 <li><a class="greenlink" href="merch.php?type=Shirt">Store</a>
                                     <ul class="dropit-submenu subnav">
                                         <li><a href="merch.php?type=Shirt">Shirts</a></li>
                                         <li><a href="merch.php?type=LP">LPs</a></li>
@@ -23,7 +23,6 @@
 
                                     </ul>
                                 </li>
-                                <li><a class="greenlink" href="cart.php">Cart <span class="cartHeader">(<span class="simpleCart_quantity"></span>)</span></a></li>
                                 <li><a class="greenlink" href="#">Tour Dates</a>
                                         <ul class="dropit-submenu subnav">
                                             <li><a href="#">COMING SOON...</a></li>
@@ -44,10 +43,16 @@
                                     </ul>
                                 </li-->
 
-                                <li><a class="greenlink" href="#">Contact</a>
+                                <!--li><a class="greenlink" href="#">Contact</a>
                                     <ul class="dropit-submenu subnav">
                                         <li><a href="#">COMING SOON...</a></li>
                                     </ul>
+                                </li-->
+                                <li>
+                                  <a class="greenlink" id="cartButton" href="cart.php">
+                                    <img src="images/shoppingcart.png" height="20" vertical-align="middle">
+                                    <span class="cartHeader">(<span class="simpleCart_quantity"></span>)</span>
+                                  </a>
                                 </li>
                         </ul>
                 </nav>

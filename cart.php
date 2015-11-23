@@ -29,6 +29,7 @@
                         </header>
 
                         <div class="simpleCart_items"></div>
+                        <h3><a class="emptycart" href="javascript:;" style="color:white;">Empty Cart</a></h3>
 
                         <div class="nekrocart">
                           <h2>
@@ -42,7 +43,7 @@
                           <h2><a href="javascript:;" class="simpleCart_checkout greenlink">Checkout with PayPal</a></h2>
                         </div>
 
-                        <a class="greenlink debug_action" href="javascript:;">Debug Button</a>
+                        <!--a class="greenlink debug_action" href="javascript:;">Debug Button</a-->
                 </article>
         </section>
 

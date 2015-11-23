@@ -30,6 +30,11 @@
             <div class="item_name" style="display:none;">{{info_title}} [{{info_type}}]</div>
 
             <div class="merchthumb">
+
+                {{#if itemdetail}}
+                <a class = "itemdetail" href="images/merch/{{itemdetail}}" data-width="{{imagewidth}}" data-height="{{imageheight}}">
+                {{/if}}
+
                 {{#if thumbnail}}
                 <img src="images/merch/{{thumbnail}}" />
                 {{else}}
@@ -37,7 +42,7 @@
                 {{/if}}
 
                 {{#if itemdetail}}
-                <a class = "itemdetail" href="images/merch/{{itemdetail}}" data-width="{{imagewidth}}" data-height="{{imageheight}}">See Detail</a>
+                <span class="itemdetailtext">See Detail</span></a>
                 {{/if}}
 
             </div>
@@ -87,7 +92,7 @@
             <div class="merchoptionsnew">
 
             <div><!--div necessary for JS functionality (links must not be siblings of other sections) -->
-                <a href="#" class="merchselect merchlink blacklink" data-filter="Shirt">Shirts</a>              
+                <a href="#" class="merchselect merchlink blacklink" data-filter="Shirt">Shirts</a>
                 <a href="#" class="merchselect merchlink blacklink" data-filter="LP">LPs</a>
                 <a href="#" class="merchselect merchlink blacklink" data-filter="CD">CDs</a>
                 <a href="#" class="merchselect merchlink blacklink" data-filter="Cassette">Cassettes</a>

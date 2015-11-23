@@ -10,30 +10,29 @@ sandbox: true,
 //method: "GET",
 
 // url to return to on successful checkout, default is null
-success: "http://localhost/nekrosite/merch.php" ,
+success: "http://localhost/nekrosite/merch.php?type=Shirt" ,
 
 // url to return to on cancelled checkout, default is null
 cancel: "http://localhost/nekrosite/cart.php"
 },
 
- cartStyle: "table",
-    cartColumns: [
-        { attr: "name" , label: "Name" },
-        { attr: "size" , label: "Size" },
-        { attr: "price" , label: "Price", view: 'currency' } ,
-        { view: "decrement" , label: false , text: "-" } ,
-        { attr: "quantity" , label: "Qty" } ,
-        { view: "increment" , label: false , text: "+" } ,
-        { attr: "total" , label: "SubTotal", view: 'currency' } ,
-        { view: "remove" , text: "Remove" , label: false }
-    ]
+cartStyle: "table",
 
-
+cartColumns: [
+    { attr: "name" , label: "Name" },
+    { attr: "size" , label: "Size" },
+    { attr: "price" , label: "Price", view: 'currency' } ,
+    { view: "decrement" , label: false , text: "-" } ,
+    { attr: "quantity" , label: "Qty" } ,
+    { view: "increment" , label: false , text: "+" } ,
+    { attr: "total" , label: "SubTotal", view: 'currency' } ,
+    { view: "remove" , text: "Remove" , label: false }
+]
 
 });
 
 var shippingRates = {
-  Shirt: {USA_1: 5, USA_add: 3, World_1: 12, World_add: 7},
+  Shirt: {USA_1: 5, USA_add: 3, World_1: 12, World_add: 5},
   LP: {USA_1: 6, USA_add: 4, World_1: 15, World_add: 5},
   CD: {USA_1: 3, USA_add: 1, World_1: 10, World_add: 3},
   Patch: {USA_1: 1, USA_add: 1, World_1: 3, World_add: 1},
@@ -50,12 +49,20 @@ var getHighestShippingRate = function()
 {
   var highestRate=0;
   var highest="";
+
+  itemTypes=getItemTypes();
+  //console.log(itemTypes);
   $.each(shippingRates, function(i, item)
   {
-    if (item[shippingLocation()+"_1"] > highestRate)
+    //console.log("i: "+i);
+    if (itemTypes[i]>0)
     {
-      highestRate = item[shippingLocation()+"_1"];
-      highest = i;
+      //console.log("i in cartItems");
+      if (item[shippingLocation()+"_1"] > highestRate)
+      {
+        highestRate = item[shippingLocation()+"_1"];
+        highest = i;
+      }
     }
   });
 
@@ -104,36 +111,44 @@ return cartTypes;
 
 simpleCart.shipping(function(){
 
-  itemTypes = getItemTypes();
+  if (simpleCart.quantity() ==0) { return 0; }
+
+  var itemTypes = getItemTypes();
 
   var first = shippingLocation() + "_1";
   var additional = shippingLocation() + "_add";
 
-
   var total = 0;
-
   var highestRate = getHighestShippingRate();
 
-//console.log(itemTypes);
-
+  //console.log(itemTypes);
+  //console.log(highestRate);
 
   $.each(itemTypes, function(i, item)
   {
-    if (simpleCart.quantity() > 1)
+    if (item > 0)
     {
-      if (i==highestRate)
+      //console.log(item);
+      //console.log("--total: "+ total);
+      //console.log("Cart Qty: "+simpleCart.quantity());
+      if (simpleCart.quantity() > 1)
       {
-        total+=shippingRates[i][shippingLocation()+"_1"];
-        total+=shippingRates[i][shippingLocation()+"_add"] * (item -1);
+        if (i==highestRate)
+        {
+          total+=shippingRates[i][shippingLocation()+"_1"];
+          total+=shippingRates[i][shippingLocation()+"_add"] * (item -1);
+        }
+        else {
+          total+=shippingRates[i][shippingLocation()+"_add"] * item;
+        }
       }
       else {
-        total+=shippingRates[i][shippingLocation()+"_add"] * item;
+        //console.log("i: "+ i);
+        //console.log("ship: " + shippingLocation()+"_1");
+        //console.log("item qty: " + item );
+        total=shippingRates[i][shippingLocation()+"_1"] * item;
       }
-    }
-    else {
-      total=shippingRates[i][shippingLocation()+"_1"] * simpleCart.quantity();
-    }
-
+  }
   });
 
   return total;
@@ -146,59 +161,24 @@ $(document).ready(function(){
     localStorage.setItem("shippingLocation", "USA");
   }
 
-  //checkCookie("shippingLocation", "USA");
+  //$(".debug_action").click(simpleCart.shipping);
 
-  $(".debug_action").click(simpleCart.shipping);
+  $(".emptycart").click(function(){
+    simpleCart.empty();
+  });
+
 
   $("#shippingLocation").val(shippingLocation());
 
+
   $("#shippingLocation").on("change", function(){
     var newLocation = $("#shippingLocation option:selected").text();
-    //console.log("newLocation " + newLocation);
-    //setCookie("shippingLocation", newLocation, 365);
+
     localStorage.setItem("shippingLocation", newLocation);
 
     $("#simpleCart_shipping").text("$"+simpleCart.shipping().toFixed(2));
     $("#simpleCart_grandTotal").text("$"+simpleCart.grandTotal().toFixed(2));
-    //console.log("shippingfunction:" + simpleCart.shipping() );
-  //  console.log("grandtotal:" + simpleCart.grandTotal() );
-    //console.log("cookie: " + getCookie("shippingLocation"));
-
-
-//    console.log($("#simpleCart_shipping").text());
-  //  console.log($("#simpleCart_grandTotal").text());
-
-
   });
 
 
 });
-
-
-//COOOKIE STUFF
-/*
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+d.toUTCString();
-    document.cookie = cname + "=" + cvalue + "; " + expires;
-}
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1);
-        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
-    }
-    return "";
-}
-
-function checkCookie(cookieName, defaultValue) {
-    var cookie = getCookie(cookieName);
-    if (cookie == "") {
-          setCookie(cookieName, defaultValue, 365);
-    }
-}
-*/

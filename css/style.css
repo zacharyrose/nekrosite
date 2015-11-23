@@ -44,6 +44,13 @@ body.siteintro main img
 }
 /**  End Siteintro code **/
 
+a:hover .cartHeader
+{
+	color: black;
+	transition:.75s;
+}
+
+
 .cartHeader
 {
 	color: lightgrey;
@@ -129,7 +136,7 @@ ul.mainul>li {
 a.greenlink, a.blacklink, a.whitelink {
 
 	padding: 7px;
-	border-radius: 8px;
+	border-radius: 6px;
 	margin-right: 15px;
 	text-decoration: none;
 	transition:.75s;
@@ -163,6 +170,17 @@ footer
     border: 1px solid black;
     border-radius: 5px;
     background-color: rgba(0,0,0,.5);
+}
+
+.item_add:hover,.item_add:active, .item_add
+{
+	transition: background-color 0.5s ease;
+}
+
+.cartAddClicked:hover,.cartAddClicked:active,.cartAddClicked
+{
+	background-color: white;
+	color:black;
 }
 
 /*
@@ -280,17 +298,28 @@ white-space: nowrap;
 }
 
 /* .itemdetail is the trigger for the modal window */
-a.itemdetail
+.itemdetail .itemdetailtext
 {
 	text-decoration: none;
 	font-size: 15px;
 	color:black;
 	font-weight: bold;
+	display: block;
 }
 
-a.itemdetail:hover
+.itemdetail:hover
+{
+	text-decoration: none;
+}
+
+.itemdetail:hover .itemdetailtext
 {
 	color: rgb(100, 138, 86);
+}
+
+.itemdetail:hover img
+{
+	opacity: .5;
 }
 
 .bubble
@@ -332,6 +361,7 @@ a.itemdetail:hover
 .price
 {
 		font-weight: bold;
+		font-size: 130%;
 }
 
 .price::before

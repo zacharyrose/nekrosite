@@ -234,6 +234,17 @@ var openModal = function(e)
     modal.open({content: modalcontent});
 }
 
+var animateOnAdd = function(e){
+  e.preventDefault();
+  $('.cartHeader').hide();
+  $('.cartHeader').fadeIn(1200);
+
+  $(this).fadeOut(300,
+    function(){
+      $(this).fadeIn(300);
+  });
+
+}
 
 /****** Sort Click Event - Callback *****/
 var merchSort = function(e){
@@ -397,6 +408,8 @@ $(document).ready(function(){
             $('.merchoptions').on('mouseleave','.merchfilter.new',toggle_mouseleave);
             $('.merchoptions').on('mouseleave','.merchsort.new',select_mouseleave);
 */
+            $('.item_add').on('click',animateOnAdd);
+
             $('.merchoptionsnew').on('mouseleave','.merchselect.new',select_mouseleave);
             $('.merchoptionsnew').on('mouseleave','.merchfilter.new',toggle_mouseleave);
             $('.merchoptionsnew').on('mouseleave','.merchsort.new',select_mouseleave);
