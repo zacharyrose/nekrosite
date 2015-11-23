@@ -26,7 +26,7 @@
 <body class="siteintro">
 
 <main>
-	<a class="siteintro" href="main.php">
+	<a class="siteintro" href="merch.php?type=Shirt">
 		<img src="images/backgrounds/devilsbreath-logo.jpg" />
 	</a>
 </main>
