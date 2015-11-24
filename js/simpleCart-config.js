@@ -164,7 +164,8 @@ $(document).ready(function(){
   //$(".debug_action").click(simpleCart.shipping);
 
   $(".emptycart").click(function(){
-    simpleCart.empty();
+    if (confirm("This will empty the cart. Are you sure?"))
+    { simpleCart.empty(); }
   });
 
 

@@ -25,7 +25,7 @@
 
 
     <script id="merch-template" type="text/x-handlebars-template">
-    <div class="merchitem col-lg-4 simpleCart_shelfItem {{#if is_soldout}}is_soldout{{/if}} type-{{info_type}}" data-id="{{id}}"=>
+    <div class="merchitem col-sm-12 col-md-6 col-lg-4 simpleCart_shelfItem {{#if is_soldout}}is_soldout{{/if}} type-{{info_type}}" data-id="{{id}}"=>
             <div class="title">{{info_title}}</div>
             <div class="item_name" style="display:none;">{{info_title}} [{{info_type}}]</div>
 
@@ -110,6 +110,9 @@
                 <a href="#" class="merchsort merchlink blacklink" data-sort="Price_Descend">Price (High-Low)</a>
             </div-->
             </div>
+
+            <!--h2><a href="cart.php">Check Cart <span class = "label label-primary"><img src="images/paypal.png" height="20" vertical-align="middle" /></span></a></h2-->
+            <h2><a href="javascript:;" class="simpleCart_checkout greenlink"><span class="cartHeader">See Cart (<span class="simpleCart_quantity"></span>)</span> &nbsp;&nbsp;<img src="images/paypal.png" height="20" vertical-align="middle" /></a></h2>
 
             <div class="merchandise pre-scrollable"></div>
 

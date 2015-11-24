@@ -133,6 +133,8 @@ ul.mainul>li {
 	color:rgb(100, 138, 86);
 }
 
+a, a:hover { color: white; }
+
 a.greenlink, a.blacklink, a.whitelink {
 
 	padding: 7px;

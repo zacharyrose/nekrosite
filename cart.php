@@ -40,7 +40,7 @@
                             Grand Total: <span id="simpleCart_grandTotal" class="simpleCart_grandTotal"></span> <br />
                           </h2>
 
-                          <h2><a href="javascript:;" class="simpleCart_checkout greenlink">Checkout with PayPal</a></h2>
+                          <h2><a href="javascript:;" class="simpleCart_checkout greenlink">Checkout &nbsp;&nbsp;<img src="images/paypal.png" height="20" vertical-align="middle" /></a></h2>
                         </div>
 
                         <!--a class="greenlink debug_action" href="javascript:;">Debug Button</a-->
