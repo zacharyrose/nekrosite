@@ -117,7 +117,7 @@
               Cart:
               <span class="cartHeader">(<span class="simpleCart_quantity"></span> items)</span>
               </a>
-              <img src="images/paypal-greenstroke.png" height="30" vertical-align="middle" />
+              <img src="images/paypal-whitestroke.png" height="30" vertical-align="middle" />
             </h2>
 
             <div class="merchandise pre-scrollable"></div>
