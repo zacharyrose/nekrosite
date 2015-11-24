@@ -135,6 +135,10 @@ ul.mainul>li {
 
 a, a:hover { color: white; }
 
+a.simpleCart_checkout.greenlink {
+	color: white;
+}
+
 a.greenlink, a.blacklink, a.whitelink {
 
 	padding: 7px;
@@ -291,6 +295,7 @@ white-space: nowrap;
 {
 	max-height: 150px;
 	max-width: 150px;
+	transition: opacity .5s ease;
 }
 
 .merchitem .info
@@ -307,6 +312,7 @@ white-space: nowrap;
 	color:black;
 	font-weight: bold;
 	display: block;
+	transition: color .5s ease;
 }
 
 .itemdetail:hover
@@ -314,10 +320,13 @@ white-space: nowrap;
 	text-decoration: none;
 }
 
+
 .itemdetail:hover .itemdetailtext
 {
-	color: rgb(100, 138, 86);
+	/*color: rgb(100, 138, 86);*/
+	color: white;
 }
+
 
 .itemdetail:hover img
 {
