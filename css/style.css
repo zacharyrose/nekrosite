@@ -8,12 +8,12 @@ body
 	text-align: center;
 }
 
-h1 { font-size: 24px;}
-h2 { font-size: 22px;}
-h3 { font-size: 18px;}
-h4,p { font-size: 16px;}
-h5 { font-size: 12px;}
-h6 { font-size: 10px;}
+h1 { font-size: 1.5em;}
+h2 { font-size: 1.375em;}
+h3 { font-size: 1.125em;}
+h4,p { font-size: 1em;}
+h5 { font-size: .75em;}
+h6 { font-size: .625em;}
 
 /*
 Code for image on site intro.
@@ -23,8 +23,8 @@ at 100% of the height of the window
 body.siteintro
 {
 	background: white;
-	margin: 0px;
-    padding: 0px;
+	margin: 0;
+    padding: 0;
     overflow: hidden;
 }
 
@@ -96,7 +96,7 @@ header.logo h1
 nav.mainnav {
     width: 500px;
     height: 35px;
-    font-size: 16px;
+    font-size: 1em;
     font-weight: bold;
     text-align: center;
 
@@ -176,6 +176,14 @@ footer
     border: 1px solid black;
     border-radius: 5px;
     background-color: rgba(0,0,0,.5);
+}
+
+@media only screen and (max-device-width : 480px) and (orientation : portrait)
+{
+	.merchandise.pre-scrollable {
+		max-height: 666px;
+	}
+
 }
 
 .item_add:hover,.item_add:active, .item_add
@@ -308,7 +316,7 @@ white-space: nowrap;
 .itemdetail .itemdetailtext
 {
 	text-decoration: none;
-	font-size: 15px;
+	font-size: .9375em;
 	color:black;
 	font-weight: bold;
 	display: block;
@@ -388,7 +396,7 @@ white-space: nowrap;
 
 .info .description
 {
-	font-size:14px;
+	font-size:.875em;
 	padding: 3px;
 	margin-top: 15px;
 }
