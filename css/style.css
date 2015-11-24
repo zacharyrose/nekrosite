@@ -197,53 +197,6 @@ footer
 	color:black;
 }
 
-/*
-main.merch
-{
-	width:90%;
-}
-main.merch section.primary {
-	width: 75%;
-	float: left;
-}
-*/
-
-
-/* aside.merchoptions has JS functionality that allows it to move with the page */
-/*
-.merchoptions
-{
-	width: 20%;
-	background-color: rgba(100, 138, 86, 0.90);
-	border-radius: 10px;
-	margin-left: 30px;
-	margin-right: 10px;
-	position: absolute;
-	top:315px;
-	right: 3%;
-}
-
-.merchoptions h2, .merchoptions h1
-{
-	color:black;
-	background-color: white;
-	border-radius: 8px;
-	width: 75%;
-}
-
-.merchoptions h2
-{
-	font-size:20px;
-	margin: 7px auto;
-}
-
-.merchoptions h1
-{
-	font-size:28px;
-	margin: 25px auto;
-}
-*/
-
 
 /* These are the click events for filtering and sorting */
 a.merchlink
@@ -255,16 +208,11 @@ a.merchlink
 
 /* main div for a "merch item". This is basically a row in the database */
 .merchitem {
-	/*max-width: 30%;
-	display: inline-block;
-	min-height: 210px;*/
 	background-color: rgba(200, 200, 200, 0.75);
 	border:1px solid black;
 	border-radius: .25em;
-	/*margin: 10px auto;*/
 	color: black;
 	padding: .625em; /*10pixels*/
-	/*position: relative;*/
 }
 
 .type
@@ -284,7 +232,7 @@ a.merchlink
 .title
 {
 	overflow: hidden;
-white-space: nowrap;
+	white-space: nowrap;
 }
 
 .merchthumb
@@ -329,9 +277,7 @@ white-space: nowrap;
 }
 
 
-.itemdetail:hover .itemdetailtext
-{
-	/*color: rgb(100, 138, 86);*/
+.itemdetail:hover .itemdetailtext {
 	color: white;
 }
 
@@ -348,34 +294,6 @@ white-space: nowrap;
 	border-radius: .625em; /* 10pixels*/
 	padding: .3125; /* 5pixels*/
 }
-
-/*
-.info .type
-{
-	display: inline;
-	margin-left: 10px;
-
-}
-
-.info .title
-{
-	display: inline;
-	margin-left: 8px;
-	font-size:20px;
-}
-
-.info .price
-{
-	position: absolute;
-	top:5px; right:10px;
-}
-*/
-
-
-/* This places a dollar sign in front of price.
-   Main reason for this is so that it's content is still a number,
-   and can be sorted properly by the sort function.
- */
 
 .price
 {
