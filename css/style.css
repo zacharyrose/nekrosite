@@ -306,12 +306,6 @@ a.merchlink
 	content:"$";
 }
 
-.soldout
-{
-	/*position: absolute;*/
-	bottom:5px; right:10px;
-}
-
 .info .description
 {
 	font-size:.875em;
