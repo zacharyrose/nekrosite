@@ -43,6 +43,8 @@
 
                 {{#if itemdetail}}
                 <span class="itemdetailtext">See Detail</span></a>
+                {{else}}
+                <span class="itemdetailtext">&nbsp;</a>
                 {{/if}}
 
             </div>

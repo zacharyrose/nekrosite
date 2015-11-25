@@ -239,20 +239,20 @@ a.merchlink
 
 .merchthumb
 {
-	height: 11.25em; /* 180pixels*/
+	/*height: 11.25em; /* 180pixels*/
 	display: inline-block;
 	vertical-align: center;
 }
 
-.merchthumb a
+.itemdetail
 {
 	display: block;
 }
 
 .merchthumb img
 {
-	max-height: 9.375em; /* 150pixels*/
-	max-width: 9.375em;
+	max-height: 14em;
+	max-width: 14em;
 	transition: opacity .5s ease;
 }
 
@@ -263,7 +263,7 @@ a.merchlink
 }
 
 /* .itemdetail is the trigger for the modal window */
-.itemdetail .itemdetailtext
+.itemdetailtext
 {
 	text-decoration: none;
 	font-size: .9375em;
