@@ -12,7 +12,7 @@
                                         <li><a href="main.php">News</a></li>
                                     </ul>
                                 </li>
-                                 <li><a class="greenlink" href="merch.php?type=Shirt">Store</a>
+                                 <li><a class="greenlink" href="store.php?directed=header">Store</a>
                                     <ul class="dropit-submenu subnav">
                                         <li><a href="merch.php?type=Shirt">Shirts</a></li>
                                         <li><a href="merch.php?type=LP">LPs</a></li>
