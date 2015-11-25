@@ -33,7 +33,7 @@ cartColumns: [
 });
 
 var shippingRates = {
-  Shirt: {USA_1: 5, USA_add: 3, World_1: 12, World_add: 5},
+  Shirt: {USA_1: 5, USA_add: 3, World_1: 13, World_add: 5},
   LP: {USA_1: 6, USA_add: 4, World_1: 15, World_add: 5},
   CD: {USA_1: 4, USA_add: 1, World_1: 10, World_add: 3},
   Patch: {USA_1: 1, USA_add: 1, World_1: 3, World_add: 1},
