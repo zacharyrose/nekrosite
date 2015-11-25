@@ -178,6 +178,11 @@ footer
     background-color: rgba(0,0,0,.5);
 }
 
+@media only screen and (max-device-width : 480px)
+{
+		body {font-size: 175%;}
+}
+
 @media only screen and (max-device-width : 480px) and (orientation : portrait)
 {
 	.merchandise.pre-scrollable {
