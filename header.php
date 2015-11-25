@@ -23,7 +23,7 @@
 
                                     </ul>
                                 </li>
-                                <li><a class="greenlink" href="#">Tour Dates</a>
+                                <!--li><a class="greenlink" href="#">Tour Dates</a>
                                         <ul class="dropit-submenu subnav">
                                             <li><a href="#">COMING SOON...</a></li>
                                             <li><a href="#">2009 With Cannabis Corpse</a></li>
@@ -36,7 +36,7 @@
                                             <li><a href="#">2015 West Coast</a></li>
                                             <li><a href="#">2015 WMD 3-D</a></li>
                                         </ul>
-                              </li>
+                              </li-->
                                <!--li><a class="greenlink" href="#">Photos</a>
                                     <ul class="dropit-submenu subnav">
                                         <li><a href="#">COMING SOON...</a></li>
@@ -50,7 +50,7 @@
                                 </li-->
                                 <li>
                                   <a class="greenlink" id="cartButton" href="cart.php">
-                                    <img src="images/shoppingcart.png" style="height: 1.25em;" vertical-align="middle">
+                                    <img src="images/shoppingcart.png" style="height: 1.5em;" vertical-align="middle">
                                     <span class="cartHeader">(<span class="simpleCart_quantity"></span>)</span>
                                   </a>
                                 </li>

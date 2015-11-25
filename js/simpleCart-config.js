@@ -1,19 +1,20 @@
 simpleCart({
 checkout: {
 type: "PayPal" ,
-email: "zackrose-facilitator@gmail.com" ,
+email: "Nekrofilth@gmail.com",
+//email: "zackrose-facilitator@gmail.com" ,
 
 // use paypal sandbox, default is false
-sandbox: true,
+//sandbox: true,
 
 // http method for form, "POST" or "GET", default is "POST"
 //method: "GET",
 
 // url to return to on successful checkout, default is null
-success: "http://localhost/nekrosite/merch.php?type=Shirt" ,
+success: "http://localhost/nekrosite/store.php?directed=PayPal" ,
 
 // url to return to on cancelled checkout, default is null
-cancel: "http://localhost/nekrosite/cart.php"
+cancel: "http://localhost/nekrosite/cart.php?directed=PayPal"
 },
 
 cartStyle: "table",

@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Nekrofilth - Merch</title>
-    <meta name="description" content="Nekrofilth" />
+    <title>Nekrofilth - Store</title>
+    <meta name="description" content="Nekrofilth - Store" />
     <meta name="author" content="Nekrofilth" />
     <meta property="og:image" content="http://nekrofilth.com/images/backgrounds/devilsbreath.png">
 
