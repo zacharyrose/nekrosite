@@ -329,11 +329,6 @@ a.merchlink
 		/*background-color: #eceeef;*/
 }
 
-#modal
-{
-	z-index: 99;
-}
-
 /* Allow scrollbars to always show in OS X */
 ::-webkit-scrollbar {
     -webkit-appearance: none;
