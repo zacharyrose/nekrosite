@@ -113,11 +113,11 @@
 
             <!--h2><a href="cart.php">Check Cart <span class = "label label-primary"><img src="images/paypal.png" height="20" vertical-align="middle" /></span></a></h2-->
             <h2><a href="cart.php" class="greenlink">
-              <img src="images/shoppingcart.png" height="20" vertical-align="middle">
+              <img src="images/shoppingcart.png" style="height: 1.25em;" vertical-align="middle">
               Cart:
               <span class="cartHeader">(<span class="simpleCart_quantity"></span> items)</span>
               </a>
-              <img src="images/paypal-whitestroke.png" height="30" vertical-align="middle" />
+              <img src="images/paypal-whitestroke.png" style="height:2em;" vertical-align="middle" />
             </h2>
 
             <div class="merchandise pre-scrollable"></div>

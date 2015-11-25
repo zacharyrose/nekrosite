@@ -33,14 +33,18 @@
 
                         <div class="nekrocart">
                           <h2>
-                            SubTotal: <span id="simpleCart_total" class="simpleCart_total"></span> <br />
-                            Ship To: <select id="shippingLocation"> <option>USA</option><option>World</option> </select>
+                            SubTotal: <span id="simpleCart_total" class="simpleCart_total"></span> <br /><br />
+                            Ship To: <select id="shippingLocation"> <option>USA</option><option>World</option> </select><br />
                             Shipping: <span id="simpleCart_shipping" class="simpleCart_shipping"></span> <br />
                             <hr />
-                            Grand Total: <span id="simpleCart_grandTotal" class="simpleCart_grandTotal"></span> <br />
                           </h2>
 
-                          <h2><a href="javascript:;" class="simpleCart_checkout greenlink">Checkout &nbsp;&nbsp;<img src="images/paypal-whitestroke.png" height="23" vertical-align="middle" /></a></h2>
+                          <h1 style="font-size:200%; margin-bottom:1.5em;">
+                            Grand Total: <span id="simpleCart_grandTotal" class="simpleCart_grandTotal"></span>
+                          </h1>
+
+                          <h2><a href="javascript:;" class="simpleCart_checkout greenlink">Checkout</a></h2>
+                          <h2><img src="images/paypal-whitestroke.png" style="height:1.5em; margin-top:1em;" vertical-align="middle" /></h2>
                         </div>
 
                         <!--a class="greenlink debug_action" href="javascript:;">Debug Button</a-->

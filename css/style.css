@@ -135,10 +135,6 @@ ul.mainul>li {
 
 a, a:hover { color: white; }
 
-a.simpleCart_checkout.greenlink {
-	color: white;
-}
-
 a.greenlink, a.blacklink, a.whitelink {
 
 	padding: .4375em; /* 7pixels */

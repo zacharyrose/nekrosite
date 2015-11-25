@@ -50,7 +50,7 @@
                                 </li-->
                                 <li>
                                   <a class="greenlink" id="cartButton" href="cart.php">
-                                    <img src="images/shoppingcart.png" height="20" vertical-align="middle">
+                                    <img src="images/shoppingcart.png" style="height: 1.25em;" vertical-align="middle">
                                     <span class="cartHeader">(<span class="simpleCart_quantity"></span>)</span>
                                   </a>
                                 </li>

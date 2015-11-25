@@ -60,3 +60,20 @@
   border-left: none;
   font-weight: bold;
 }
+
+a.simpleCart_checkout.greenlink {
+	color: white;
+	font-size: 150%;
+  margin-right: 0;
+}
+
+a.simpleCart_checkout.greenlink:hover
+{
+  color: black;
+}
+
+#shippingLocation
+{
+  background: white;
+  color: black;
+}
