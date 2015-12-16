@@ -239,7 +239,7 @@ a.merchlink
 
 .merchthumb
 {
-	/*height: 11.25em; /* 180pixels*/
+	height: 16em;
 	display: inline-block;
 	vertical-align: center;
 }
