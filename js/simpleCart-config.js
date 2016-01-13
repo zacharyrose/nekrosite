@@ -11,10 +11,10 @@ email: "Nekrofilth@gmail.com",
 //method: "GET",
 
 // url to return to on successful checkout, default is null
-success: "http://localhost/nekrosite/store.php?directed=PayPal" ,
+success: "http://nekrofilth.com/merch.php?type=Shirt&directed=PayPal" ,
 
 // url to return to on cancelled checkout, default is null
-cancel: "http://localhost/nekrosite/cart.php?directed=PayPal"
+cancel: "http://nekrofilth.com/cart.php?directed=PayPal"
 },
 
 cartStyle: "table",
